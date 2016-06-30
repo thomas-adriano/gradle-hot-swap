@@ -14,18 +14,22 @@ dependencies {
     springloaded group: 'org.springframework', name: 'springloaded', version: '1.2.6.RELEASE'
 }
 
+task setJVMArgs << {
+	applicationDefaultJvmArgs = ["-javaagent:"+configurations.springloaded.files[0].getAbsolutePath().replace("\\", "/"), "-noverify"]
+}
 
-applicationDefaultJvmArgs = ["-javaagent:"+configurations.springloaded.files[0].getAbsolutePath().replace("\\", "/"), "-noverify"]
 eclipse {
     classpath {
         defaultOutputDir = file("$buildDir/classes/main/")
     }
 }
+
 idea {
     module {
         inheritOutputDirs = false
         outputDir = file("$buildDir/classes/main/")
     }
 }
+run.dependsOn setJVMArgs
 run.dependsOn eclipseClasspath
 run.dependsOn ideaModule
