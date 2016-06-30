@@ -5,7 +5,7 @@ This script uses [spring-loaded](https://github.com/spring-projects/spring-loade
 
 ### Getting started
 * Make sure the build.gradle file from the target project has the application plugin applied (`apply plugin: 'application'`);
-* Make sure yout IDE are compiling the sources after change or on save;
+* Make sure your IDE are compiling the sources after change or on save;
 * Add this line to your build.gradle file: `apply from: "https://raw.github.com/thomas-adriano/gradle-hot-swap/master/hot-swap.gradle"`
 * Execute the `run` task from Gradle application plugin
 
