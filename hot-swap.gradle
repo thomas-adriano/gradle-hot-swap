@@ -1,0 +1,31 @@
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+repositories {
+	 mavenCentral()
+}
+
+configurations {
+    springloaded
+}
+
+dependencies {
+    springloaded group: 'org.springframework', name: 'springloaded', version: '1.2.6.RELEASE'
+}
+
+
+applicationDefaultJvmArgs = ["-javaagent:"+configurations.springloaded.files[0].getAbsolutePath().replace("\\", "/"), "-noverify"]
+eclipse {
+    classpath {
+        defaultOutputDir = file("$buildDir/classes/main/")
+    }
+}
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+run.dependsOn eclipseClasspath
+run.dependsOn ideaModule
