@@ -18,4 +18,4 @@ This script uses [spring-loaded](https://github.com/spring-projects/spring-loade
 * The IDE must compile the sources after save or change;
 
 ### Caveats
-* In eclipse, after the first time you execute the `gradle run` (application plugin task) you have to refresh the target project, otherwise hot swap will just not work.
+* In eclipse, after the first time the `gradle run` (application plugin task) is executed, you have to refresh the target project, otherwise hot swap will just not work.
