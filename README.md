@@ -1,7 +1,7 @@
 # gradle-hot-swap
 ### Hot Swap functionality to Gradle projects in Eclipse and IntelliJ
 
-This script uses [spring-loaded](https://github.com/spring-projects/spring-loaded) to provide hot swap functionality to Gradle application projects. It does not create any new tasks to start your application, instead it uses the application's plugin `run` task.
+This script uses [spring-loaded](https://github.com/spring-projects/spring-loaded) to provide hot swap functionality to Gradle application projects. It does not create any new tasks to start your application, instead it uses the well known application's plugin `run` task.
 
 ### Getting started
 * Make sure the build.gradle file from the target project has the application plugin applied (`apply plugin: 'application'`);
